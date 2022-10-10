@@ -1,0 +1,67 @@
+@use '../../styles/config/abstract' as ABS;
+@use '../../styles/config/variables' as CONST;
+
+@keyframes animatelogo {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(10%);
+  }
+}
+
+.counter {
+  border-bottom: 1px solid;
+  display: flex;
+  flex-direction: column;
+  row-gap: CONST.$xxl;
+  max-width: 550px;
+  width: 100%;
+  margin-left: CONST.$m;
+  margin-right: CONST.$m;
+  padding-bottom: CONST.$m;
+  .title {
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .img {
+    display: flex;
+    justify-content: center;
+    span {
+      font-size: 100px;
+      animation: animatelogo 1s linear infinite alternate;
+    }
+  }
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .value {
+      margin: 0 CONST.$m;
+      font-size: CONST.$l;
+    }
+    button {
+      @include ABS.increment-button;
+    }
+  }
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: c;
+    .amount {
+      @include ABS.add-amount;
+    }
+    button {
+      @include ABS.action-button;
+    }
+    .asyncButton {
+      @include ABS.async-button;
+    }
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .counter {
+    margin: auto;
+  }
+}

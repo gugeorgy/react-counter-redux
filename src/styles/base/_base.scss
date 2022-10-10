@@ -1,0 +1,46 @@
+@use '../config/variables' as CONST;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  body {
+    background-color: CONST.$body;
+    color: CONST.$text;
+    main {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    ul {
+      list-style: none;
+    }
+    h1,
+    h2,
+    h3 {
+      font-size: CONST.$xl;
+    }
+    p {
+      font-size: CONST.$m;
+    }
+    a {
+      text-decoration: none;
+      font-size: CONST.$m;
+    }
+    input {
+      background: none;
+      outline: none;
+      border: none;
+    }
+    button {
+      @extend input;
+      cursor: pointer;
+    }
+  }
+}
